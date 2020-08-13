@@ -6,13 +6,66 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6F6B160624E245A60041B8EF /* SPBSShellManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6B160524E245A60041B8EF /* SPBSShellManager.m */; };
+		6F6B160E24E24E610041B8EF /* SPBSShellManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6B160D24E24E610041B8EF /* SPBSShellManagerTests.m */; };
+		6F6B161324E24FCB0041B8EF /* SPBSShellManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6B160524E245A60041B8EF /* SPBSShellManager.m */; };
+		6F6B161624E251540041B8EF /* SPBSCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6B161524E251540041B8EF /* SPBSCommand.m */; };
+		6F6B161724E251540041B8EF /* SPBSCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6B161524E251540041B8EF /* SPBSCommand.m */; };
+		6F6B161924E2545A0041B8EF /* SPBSCommandTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6B161824E2545A0041B8EF /* SPBSCommandTests.m */; };
+		6F6B161D24E25A970041B8EF /* SpotlightBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6B161B24E25A750041B8EF /* SpotlightBridge.framework */; };
+		6F6B162024E25C3B0041B8EF /* SPBSShellQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6B161F24E25C3B0041B8EF /* SPBSShellQuery.m */; };
+		6F6B162324E261180041B8EF /* SPBSSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6B162224E261180041B8EF /* SPBSSearchResult.m */; };
+		6F6B162524E263F70041B8EF /* SpotlightBridgeShell.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6F6B15FB24E2457E0041B8EF /* SpotlightBridgeShell.bundle */; };
+		6F6B162B24E38B300041B8EF /* SPBSAliasParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6B162A24E38B300041B8EF /* SPBSAliasParser.m */; };
+		6F6B162D24E38BC30041B8EF /* SPBSAliasParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6B162C24E38BC30041B8EF /* SPBSAliasParserTests.m */; };
+		6F6B162E24E38C660041B8EF /* SPBSAliasParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6B162A24E38B300041B8EF /* SPBSAliasParser.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6F6B162424E263C80041B8EF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "/Users/benjaminjohnson/Library/Application Support/SpotlightBridge";
+			dstSubfolderSpec = 0;
+			files = (
+				6F6B162524E263F70041B8EF /* SpotlightBridgeShell.bundle in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		6F6B15FB24E2457E0041B8EF /* SpotlightBridgeShell.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotlightBridgeShell.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F6B15FE24E2457E0041B8EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F6B160424E245A60041B8EF /* SPBSShellManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPBSShellManager.h; sourceTree = "<group>"; };
+		6F6B160524E245A60041B8EF /* SPBSShellManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBSShellManager.m; sourceTree = "<group>"; };
+		6F6B160B24E24E600041B8EF /* SpotlightBridgeShellTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotlightBridgeShellTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F6B160D24E24E610041B8EF /* SPBSShellManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBSShellManagerTests.m; sourceTree = "<group>"; };
+		6F6B160F24E24E610041B8EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F6B161424E251540041B8EF /* SPBSCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPBSCommand.h; sourceTree = "<group>"; };
+		6F6B161524E251540041B8EF /* SPBSCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBSCommand.m; sourceTree = "<group>"; };
+		6F6B161824E2545A0041B8EF /* SPBSCommandTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBSCommandTests.m; sourceTree = "<group>"; };
+		6F6B161B24E25A750041B8EF /* SpotlightBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpotlightBridge.framework; path = "../../Library/Developer/Xcode/DerivedData/SpotlightBridge-hbaaasnfxypktxdvohccviosirbx/Build/Products/Debug/SpotlightBridge.framework"; sourceTree = "<group>"; };
+		6F6B161E24E25C3B0041B8EF /* SPBSShellQuery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPBSShellQuery.h; sourceTree = "<group>"; };
+		6F6B161F24E25C3B0041B8EF /* SPBSShellQuery.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBSShellQuery.m; sourceTree = "<group>"; };
+		6F6B162124E261180041B8EF /* SPBSSearchResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPBSSearchResult.h; sourceTree = "<group>"; };
+		6F6B162224E261180041B8EF /* SPBSSearchResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBSSearchResult.m; sourceTree = "<group>"; };
+		6F6B162924E38B300041B8EF /* SPBSAliasParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPBSAliasParser.h; sourceTree = "<group>"; };
+		6F6B162A24E38B300041B8EF /* SPBSAliasParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBSAliasParser.m; sourceTree = "<group>"; };
+		6F6B162C24E38BC30041B8EF /* SPBSAliasParserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBSAliasParserTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6F6B15F824E2457E0041B8EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F6B161D24E25A970041B8EF /* SpotlightBridge.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F6B160824E24E600041B8EF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -26,7 +79,9 @@
 			isa = PBXGroup;
 			children = (
 				6F6B15FD24E2457E0041B8EF /* SpotlightBridgeShell */,
+				6F6B160C24E24E610041B8EF /* SpotlightBridgeShellTests */,
 				6F6B15FC24E2457E0041B8EF /* Products */,
+				6F6B161A24E25A750041B8EF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -34,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				6F6B15FB24E2457E0041B8EF /* SpotlightBridgeShell.bundle */,
+				6F6B160B24E24E600041B8EF /* SpotlightBridgeShellTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -42,8 +98,37 @@
 			isa = PBXGroup;
 			children = (
 				6F6B15FE24E2457E0041B8EF /* Info.plist */,
+				6F6B160424E245A60041B8EF /* SPBSShellManager.h */,
+				6F6B160524E245A60041B8EF /* SPBSShellManager.m */,
+				6F6B161424E251540041B8EF /* SPBSCommand.h */,
+				6F6B161524E251540041B8EF /* SPBSCommand.m */,
+				6F6B161E24E25C3B0041B8EF /* SPBSShellQuery.h */,
+				6F6B161F24E25C3B0041B8EF /* SPBSShellQuery.m */,
+				6F6B162124E261180041B8EF /* SPBSSearchResult.h */,
+				6F6B162224E261180041B8EF /* SPBSSearchResult.m */,
+				6F6B162924E38B300041B8EF /* SPBSAliasParser.h */,
+				6F6B162A24E38B300041B8EF /* SPBSAliasParser.m */,
 			);
 			path = SpotlightBridgeShell;
+			sourceTree = "<group>";
+		};
+		6F6B160C24E24E610041B8EF /* SpotlightBridgeShellTests */ = {
+			isa = PBXGroup;
+			children = (
+				6F6B160D24E24E610041B8EF /* SPBSShellManagerTests.m */,
+				6F6B161824E2545A0041B8EF /* SPBSCommandTests.m */,
+				6F6B162C24E38BC30041B8EF /* SPBSAliasParserTests.m */,
+				6F6B160F24E24E610041B8EF /* Info.plist */,
+			);
+			path = SpotlightBridgeShellTests;
+			sourceTree = "<group>";
+		};
+		6F6B161A24E25A750041B8EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F6B161B24E25A750041B8EF /* SpotlightBridge.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -56,6 +141,7 @@
 				6F6B15F724E2457E0041B8EF /* Sources */,
 				6F6B15F824E2457E0041B8EF /* Frameworks */,
 				6F6B15F924E2457E0041B8EF /* Resources */,
+				6F6B162424E263C80041B8EF /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -65,6 +151,23 @@
 			productName = SpotlightBridgeShell;
 			productReference = 6F6B15FB24E2457E0041B8EF /* SpotlightBridgeShell.bundle */;
 			productType = "com.apple.product-type.bundle";
+		};
+		6F6B160A24E24E600041B8EF /* SpotlightBridgeShellTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6F6B161024E24E610041B8EF /* Build configuration list for PBXNativeTarget "SpotlightBridgeShellTests" */;
+			buildPhases = (
+				6F6B160724E24E600041B8EF /* Sources */,
+				6F6B160824E24E600041B8EF /* Frameworks */,
+				6F6B160924E24E600041B8EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpotlightBridgeShellTests;
+			productName = SpotlightBridgeShellTests;
+			productReference = 6F6B160B24E24E600041B8EF /* SpotlightBridgeShellTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -76,6 +179,9 @@
 				ORGANIZATIONNAME = "Benjamin Johnson";
 				TargetAttributes = {
 					6F6B15FA24E2457E0041B8EF = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					6F6B160A24E24E600041B8EF = {
 						CreatedOnToolsVersion = 11.6;
 					};
 				};
@@ -94,12 +200,20 @@
 			projectRoot = "";
 			targets = (
 				6F6B15FA24E2457E0041B8EF /* SpotlightBridgeShell */,
+				6F6B160A24E24E600041B8EF /* SpotlightBridgeShellTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6F6B15F924E2457E0041B8EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F6B160924E24E600041B8EF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -113,6 +227,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F6B162024E25C3B0041B8EF /* SPBSShellQuery.m in Sources */,
+				6F6B160624E245A60041B8EF /* SPBSShellManager.m in Sources */,
+				6F6B162B24E38B300041B8EF /* SPBSAliasParser.m in Sources */,
+				6F6B162324E261180041B8EF /* SPBSSearchResult.m in Sources */,
+				6F6B161624E251540041B8EF /* SPBSCommand.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F6B160724E24E600041B8EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F6B161724E251540041B8EF /* SPBSCommand.m in Sources */,
+				6F6B161924E2545A0041B8EF /* SPBSCommandTests.m in Sources */,
+				6F6B160E24E24E610041B8EF /* SPBSShellManagerTests.m in Sources */,
+				6F6B162E24E38C660041B8EF /* SPBSAliasParser.m in Sources */,
+				6F6B161324E24FCB0041B8EF /* SPBSShellManager.m in Sources */,
+				6F6B162D24E38BC30041B8EF /* SPBSAliasParserTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +365,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "/Users/benjaminjohnson/Library/Developer/Xcode/DerivedData/SpotlightBridge-hbaaasnfxypktxdvohccviosirbx/Build/Products/Debug/";
 				INFOPLIST_FILE = SpotlightBridgeShell/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_BUNDLE_IDENTIFIER = benjamin.spotlightbridge.SpotlightBridgeShell;
@@ -247,12 +380,45 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "/Users/benjaminjohnson/Library/Developer/Xcode/DerivedData/SpotlightBridge-hbaaasnfxypktxdvohccviosirbx/Build/Products/Debug/";
 				INFOPLIST_FILE = SpotlightBridgeShell/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_BUNDLE_IDENTIFIER = benjamin.spotlightbridge.SpotlightBridgeShell;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		6F6B161124E24E610041B8EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SpotlightBridgeShellTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = benjamin.spotlightbridge.SpotlightBridgeShellTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6F6B161224E24E610041B8EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SpotlightBridgeShellTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = benjamin.spotlightbridge.SpotlightBridgeShellTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -273,6 +439,15 @@
 			buildConfigurations = (
 				6F6B160224E2457E0041B8EF /* Debug */,
 				6F6B160324E2457E0041B8EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6F6B161024E24E610041B8EF /* Build configuration list for PBXNativeTarget "SpotlightBridgeShellTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F6B161124E24E610041B8EF /* Debug */,
+				6F6B161224E24E610041B8EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

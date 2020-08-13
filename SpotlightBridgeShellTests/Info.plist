@@ -18,9 +18,5 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2020 Benjamin Johnson. All rights reserved.</string>
-	<key>NSPrincipalClass</key>
-	<string>SPBSShellQuery</string>
 </dict>
 </plist>
