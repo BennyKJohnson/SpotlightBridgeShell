@@ -1,5 +1,6 @@
 #import <XCTest/XCTest.h>
 #import "SPBSShellManager.h"
+#import "SPBSTestShell.h"
 
 @interface SPBSShellManagerTests : XCTestCase
 
@@ -8,28 +9,67 @@
 @implementation SPBSShellManagerTests
 
 -(void) testInitWithShell {
-    SPBSShellManager *manager = [[SPBSShellManager alloc] initWithShell:@"/bin/bash"];
-    
+    SPBSTestShell *testShell = [[SPBSTestShell alloc]initWithPath:@"/bin/bash"];
+    SPBSShellManager *manager = [[SPBSShellManager alloc] initWithShell:testShell];
+
     XCTAssertNotNil(manager);
-    XCTAssertTrue([manager.shell isEqualToString:@"/bin/bash"]);
+    XCTAssertEqual(manager.shell, testShell);
 }
 
-- (void)testProgramExists {
-    SPBSShellManager *manager = [[SPBSShellManager alloc] initWithShell:@"/bin/bash"];
-    XCTAssertTrue([manager programExists:@"which"]);
-    XCTAssertTrue([manager programExists:@"ls"]);
-    XCTAssertTrue([manager programExists:@"cat"]);
+-(void)testLoadProgramsIntoCache {
+    SPBSTestShell *testShell = [[SPBSTestShell alloc]initWithPath:@"/bin/bash"];
+    testShell.commands = @[@"ls", @"cat"];
     
-    XCTAssertFalse([manager programExists:@"fakespotlightbridgeprogram"]);
+    SPBSShellManager *manager = [[SPBSShellManager alloc] initWithShell:testShell];
+    [manager loadProgramsIntoCache];
+    
+    XCTAssertNotNil(manager.searchIndex);
+    
+    NSArray *subsetOfExpectedPrograms = @[
+        @"ls",
+        @"cat",
+    ];
+    
+    for (NSString *expectedProgram in subsetOfExpectedPrograms) {
+        XCTAssertTrue([manager.searchIndex containsItem: expectedProgram]);
+    }
 }
 
--(void)testProgramExistsWithAlias {
-    SPBSShellManager *manager = [[SPBSShellManager alloc] initWithShell:@"/bin/bash"];
-    manager.aliases = @[@"mountmac"];
+-(void)testLoadAliasesIntoCache {
+    SPBSTestShell *testShell = [[SPBSTestShell alloc]initWithPath:@"/bin/bash"];
+    testShell.aliases = @[@"mountmac", @"myalias"];
     
-    XCTAssertTrue([manager programExists: @"mountmac"]);
-    XCTAssertFalse([manager programExists: @"unavailablealias"]);
+    SPBSShellManager *manager = [[SPBSShellManager alloc] initWithShell:testShell];
+    [manager loadAliasesIntoCache];
+    
+    NSArray *expectedAliases = @[
+        @"mountmac",
+        @"myalias",
+    ];
+    
+    for (NSString *expectedAlias in expectedAliases) {
+        XCTAssertTrue([manager.searchIndex containsItem: expectedAlias]);
+    }
+}
 
+-(void)testMatchesForProgram {
+    SPBSTestShell *testShell = [[SPBSTestShell alloc]initWithPath:@"/bin/bash"];
+    testShell.commands = @[@"lsm",@"ls", @"cat"];
+    testShell.aliases = @[@"myalias"];
+    SPBSShellManager *manager = [[SPBSShellManager alloc] initWithShell:testShell];
+    [manager loadProgramsIntoCache];
+    [manager loadAliasesIntoCache];
+    
+    NSArray *matches = [manager matchesForProgram:@"ls"];
+    NSArray *expectedMatches = @[@"ls", @"lsm"];
+    XCTAssertTrue([matches isEqualToArray:expectedMatches]);
+    
+    matches = [manager matchesForProgram:@"my"];
+    expectedMatches = @[@"myalias"];
+    XCTAssertTrue([matches isEqualToArray:expectedMatches]);
+    
+    matches = [manager matchesForProgram:@"unknown"];
+    XCTAssertTrue([matches isEqualToArray:@[]]);
 }
 
 @end

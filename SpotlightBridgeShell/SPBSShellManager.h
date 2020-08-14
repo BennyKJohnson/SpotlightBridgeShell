@@ -1,20 +1,24 @@
 #import <Foundation/Foundation.h>
+#import "SPBSearchIndex.h"
+#import "SPBSShell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SPBSShellManager : NSObject
 
-+(NSString*) defaultShell;
++(SPBSShell *) defaultShell;
 
--(instancetype) initWithShell: (NSString*)shell;
+-(instancetype) initWithShell: (SPBSShell*)shell;
 
-@property (nonatomic, strong) NSArray *aliases;
+@property (nonatomic, strong) SPBSShell *shell;
 
-@property (nonatomic, strong) NSString *shell;
+@property (nonatomic, strong) SPBSearchIndex *searchIndex;
 
 -(void)loadAliasesIntoCache;
 
--(BOOL)programExists: (NSString *)program;
+-(void)loadProgramsIntoCache;
+
+-(NSArray*) matchesForProgram: (NSString*)program;
 
 @end
 

@@ -8,7 +8,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) SPBSCommand *command;
 
--(instancetype) initWithCommand: (SPBSCommand*)command;
+@property (nonatomic) BOOL isTopHit;
 
 @end
 

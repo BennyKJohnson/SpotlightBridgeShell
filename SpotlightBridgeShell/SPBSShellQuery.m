@@ -12,26 +12,29 @@ static SPBSShellManager *shellManager;
     
     shellManager = [[SPBSShellManager alloc] initWithShell:[SPBSShellManager defaultShell]];
     [shellManager loadAliasesIntoCache];
+    [shellManager loadProgramsIntoCache];
 }
 
 -(void) performQuery:(NSString *)userQueryString withCompletionHandler:(void (^)(SPBResponse *response))completionHandler {
-    completionHandler([self queryResponseForUserQueryString:userQueryString]);
-}
-
--(SPBResponse *) queryResponseForUserQueryString: (NSString *)userQueryString {
     SPBSCommand *command = [[SPBSCommand alloc] initWithUserQuery: userQueryString];
+    
     if (!command) {
-        return NULL;
+        completionHandler(NULL);
     }
     
-    if (shellManager && [shellManager programExists:command.program]) {
-        return [self createResponseForCommand:command];
+    if(!shellManager) {
+        completionHandler(NULL);
+    }
+    
+    NSArray *matches = [shellManager matchesForProgram:command.program];
+    if ([matches count]) {
+       completionHandler([self createResponseForCommand:command matches:matches]);
     } else {
-        return NULL;
+       completionHandler(NULL);
     }
 }
 
--(SPBResponse*) createResponseForCommand:(SPBSCommand *)comannd  {
+-(SPBResponse*) createResponseForCommand:(SPBSCommand *)comannd matches: (NSArray*)matches  {
     SPBResultSection *resultSection = [[SPBResultSection alloc] initWithTitle: @"Terminal"];
     
     // Ensures rankSectionsUsingBundleIDToSectionMapping parses section correctly to appear as top hit
@@ -39,8 +42,14 @@ static SPBSShellManager *shellManager;
     // TODO Fix hardcoded spotlight bundle identifier
     resultSection.bundleIdentifier = @"com.apple.calculator";
 
-    SPBSSearchResult *searchResult = [[SPBSSearchResult alloc] initWithCommand:comannd];
-    resultSection.results = @[searchResult];
+    NSMutableArray *searchResults = [NSMutableArray array];
+    for (NSString *match in matches) {
+        SPBSSearchResult *searchResult = [[SPBSSearchResult alloc] initWithDisplayName:match];
+        searchResult.isTopHit = [comannd.program isEqualTo: match];
+        [searchResults addObject:searchResult];
+    }
+
+    resultSection.results = searchResults;
 
     SPBResponse *response = [[SPBResponse alloc] init];
     response.topHitIsIn = YES;

@@ -20,6 +20,12 @@
 		6F6B162B24E38B300041B8EF /* SPBSAliasParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6B162A24E38B300041B8EF /* SPBSAliasParser.m */; };
 		6F6B162D24E38BC30041B8EF /* SPBSAliasParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6B162C24E38BC30041B8EF /* SPBSAliasParserTests.m */; };
 		6F6B162E24E38C660041B8EF /* SPBSAliasParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6B162A24E38B300041B8EF /* SPBSAliasParser.m */; };
+		6F6B169E24E63F050041B8EF /* SPBSearchIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6B169D24E63F050041B8EF /* SPBSearchIndex.m */; };
+		6F6B16A024E63F370041B8EF /* SPBSearchIndexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6B169F24E63F370041B8EF /* SPBSearchIndexTests.m */; };
+		6F6B16A124E63FE40041B8EF /* SPBSearchIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6B169D24E63F050041B8EF /* SPBSearchIndex.m */; };
+		6F6B16A424E661EC0041B8EF /* SPBSShell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6B16A324E661EB0041B8EF /* SPBSShell.m */; };
+		6F77147D24E68E8C00CBA340 /* SPBSTestShell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F77147C24E68E8C00CBA340 /* SPBSTestShell.m */; };
+		6F77147E24E68E9C00CBA340 /* SPBSShell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6B16A324E661EB0041B8EF /* SPBSShell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -54,6 +60,13 @@
 		6F6B162924E38B300041B8EF /* SPBSAliasParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPBSAliasParser.h; sourceTree = "<group>"; };
 		6F6B162A24E38B300041B8EF /* SPBSAliasParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBSAliasParser.m; sourceTree = "<group>"; };
 		6F6B162C24E38BC30041B8EF /* SPBSAliasParserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBSAliasParserTests.m; sourceTree = "<group>"; };
+		6F6B169C24E63F050041B8EF /* SPBSearchIndex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPBSearchIndex.h; sourceTree = "<group>"; };
+		6F6B169D24E63F050041B8EF /* SPBSearchIndex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBSearchIndex.m; sourceTree = "<group>"; };
+		6F6B169F24E63F370041B8EF /* SPBSearchIndexTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBSearchIndexTests.m; sourceTree = "<group>"; };
+		6F6B16A224E661EB0041B8EF /* SPBSShell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPBSShell.h; sourceTree = "<group>"; };
+		6F6B16A324E661EB0041B8EF /* SPBSShell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBSShell.m; sourceTree = "<group>"; };
+		6F77147B24E68E8C00CBA340 /* SPBSTestShell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPBSTestShell.h; sourceTree = "<group>"; };
+		6F77147C24E68E8C00CBA340 /* SPBSTestShell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBSTestShell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +113,8 @@
 				6F6B15FE24E2457E0041B8EF /* Info.plist */,
 				6F6B160424E245A60041B8EF /* SPBSShellManager.h */,
 				6F6B160524E245A60041B8EF /* SPBSShellManager.m */,
+				6F6B16A224E661EB0041B8EF /* SPBSShell.h */,
+				6F6B16A324E661EB0041B8EF /* SPBSShell.m */,
 				6F6B161424E251540041B8EF /* SPBSCommand.h */,
 				6F6B161524E251540041B8EF /* SPBSCommand.m */,
 				6F6B161E24E25C3B0041B8EF /* SPBSShellQuery.h */,
@@ -108,6 +123,8 @@
 				6F6B162224E261180041B8EF /* SPBSSearchResult.m */,
 				6F6B162924E38B300041B8EF /* SPBSAliasParser.h */,
 				6F6B162A24E38B300041B8EF /* SPBSAliasParser.m */,
+				6F6B169C24E63F050041B8EF /* SPBSearchIndex.h */,
+				6F6B169D24E63F050041B8EF /* SPBSearchIndex.m */,
 			);
 			path = SpotlightBridgeShell;
 			sourceTree = "<group>";
@@ -117,8 +134,11 @@
 			children = (
 				6F6B160D24E24E610041B8EF /* SPBSShellManagerTests.m */,
 				6F6B161824E2545A0041B8EF /* SPBSCommandTests.m */,
+				6F6B169F24E63F370041B8EF /* SPBSearchIndexTests.m */,
 				6F6B162C24E38BC30041B8EF /* SPBSAliasParserTests.m */,
 				6F6B160F24E24E610041B8EF /* Info.plist */,
+				6F77147B24E68E8C00CBA340 /* SPBSTestShell.h */,
+				6F77147C24E68E8C00CBA340 /* SPBSTestShell.m */,
 			);
 			path = SpotlightBridgeShellTests;
 			sourceTree = "<group>";
@@ -180,6 +200,7 @@
 				TargetAttributes = {
 					6F6B15FA24E2457E0041B8EF = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 					};
 					6F6B160A24E24E600041B8EF = {
 						CreatedOnToolsVersion = 11.6;
@@ -230,6 +251,8 @@
 				6F6B162024E25C3B0041B8EF /* SPBSShellQuery.m in Sources */,
 				6F6B160624E245A60041B8EF /* SPBSShellManager.m in Sources */,
 				6F6B162B24E38B300041B8EF /* SPBSAliasParser.m in Sources */,
+				6F6B16A424E661EC0041B8EF /* SPBSShell.m in Sources */,
+				6F6B169E24E63F050041B8EF /* SPBSearchIndex.m in Sources */,
 				6F6B162324E261180041B8EF /* SPBSSearchResult.m in Sources */,
 				6F6B161624E251540041B8EF /* SPBSCommand.m in Sources */,
 			);
@@ -242,8 +265,12 @@
 				6F6B161724E251540041B8EF /* SPBSCommand.m in Sources */,
 				6F6B161924E2545A0041B8EF /* SPBSCommandTests.m in Sources */,
 				6F6B160E24E24E610041B8EF /* SPBSShellManagerTests.m in Sources */,
+				6F77147D24E68E8C00CBA340 /* SPBSTestShell.m in Sources */,
+				6F6B16A024E63F370041B8EF /* SPBSearchIndexTests.m in Sources */,
 				6F6B162E24E38C660041B8EF /* SPBSAliasParser.m in Sources */,
+				6F6B16A124E63FE40041B8EF /* SPBSearchIndex.m in Sources */,
 				6F6B161324E24FCB0041B8EF /* SPBSShellManager.m in Sources */,
+				6F77147E24E68E9C00CBA340 /* SPBSShell.m in Sources */,
 				6F6B162D24E38BC30041B8EF /* SPBSAliasParserTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,14 +390,23 @@
 		6F6B160224E2457E0041B8EF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "/Users/benjaminjohnson/Library/Developer/Xcode/DerivedData/SpotlightBridge-hbaaasnfxypktxdvohccviosirbx/Build/Products/Debug/";
 				INFOPLIST_FILE = SpotlightBridgeShell/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = benjamin.spotlightbridge.SpotlightBridgeShell;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SpotlightBridgeShell/SpotlightBridgeShell-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -378,14 +414,22 @@
 		6F6B160324E2457E0041B8EF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "/Users/benjaminjohnson/Library/Developer/Xcode/DerivedData/SpotlightBridge-hbaaasnfxypktxdvohccviosirbx/Build/Products/Debug/";
 				INFOPLIST_FILE = SpotlightBridgeShell/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = benjamin.spotlightbridge.SpotlightBridgeShell;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SpotlightBridgeShell/SpotlightBridgeShell-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
