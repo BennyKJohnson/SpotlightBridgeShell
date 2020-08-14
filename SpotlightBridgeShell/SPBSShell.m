@@ -32,36 +32,29 @@
 
 -(NSArray*)fetchCommands {
     NSTask *commandTask = [self taskForCommand:@"compgen -c"];
-
-   NSPipe *pipe = [NSPipe pipe];
-   NSFileHandle *fileHandle = pipe.fileHandleForReading;
-   commandTask.standardOutput = pipe;
-
-   [commandTask launch];
-
-   NSData *data = [fileHandle readDataToEndOfFile];
-   [fileHandle closeFile];
-
-   NSString *output = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-   NSArray *commands = [output componentsSeparatedByCharactersInSet:NSCharacterSet.newlineCharacterSet];
-   return commands;
+    NSString *output = [self runCommandTask:commandTask];
+    
+    return [output componentsSeparatedByCharactersInSet:NSCharacterSet.newlineCharacterSet];
 }
 
 -(NSArray*)fetchAliases {
     NSTask *aliasTask = [self taskForCommand:@"alias"];
+    NSString *aliasOutput = [self runCommandTask:aliasTask];
 
-   NSPipe *pipe = [NSPipe pipe];
-   NSFileHandle *fileHandle = pipe.fileHandleForReading;
-   aliasTask.standardOutput = pipe;
+    return [SPBSAliasParser parseAliasesFromString:aliasOutput];
+}
 
-   [aliasTask launch];
+-(NSString*)runCommandTask:(NSTask*)task {
+    NSPipe *pipe = [NSPipe pipe];
+    NSFileHandle *fileHandle = pipe.fileHandleForReading;
+    task.standardOutput = pipe;
+    [task launch];
 
-   NSData *data = [fileHandle readDataToEndOfFile];
-   [fileHandle closeFile];
-
-   NSString *aliasOutput = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-
-   return [SPBSAliasParser parseAliasesFromString:aliasOutput];
+    NSData *data = [fileHandle readDataToEndOfFile];
+    [fileHandle closeFile];
+    
+    NSString *output = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    return output;
 }
 
 -(NSTask*)taskForCommand: (NSString*)command {
